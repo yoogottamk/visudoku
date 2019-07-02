@@ -1,3 +1,7 @@
+# This script was used by me to generate training data
+# This script downloads 150 sudoku images [50 each for easy, medium, hard],
+#  then adds some border around the image [done to test that puzzle extraction was working properly]
+
 import requests
 import io
 from PIL import Image, ImageOps
