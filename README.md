@@ -25,6 +25,17 @@ The final puzzle is solved by a cpp program (here as a submodule) which I wrote 
 
 ![Another example](./screens/Final.png)
 
+## Instructions
+
+Run jupyterlab or jupyter notebook and run `visudoku.ipynb`.
+
+You can either use the images given in `test-images`, or provide your own images, or even use the webcam.
+To use the webcam, you can leave the `IMG_PATH` empty.
+
+If you use the webcam, you have to press `c` when you want to capture the image.
+
+After getting the image, it will automatically solve and give the solution at the bottom.
+
 ## Aside
 This project began a year ago, I could only work on it in my vacations.
 
@@ -37,6 +48,7 @@ This project began a year ago, I could only work on it in my vacations.
  - Took [a course on ml](https://www.coursera.org/learn/machine-learning)
  - Tried to make it recognize the digits, failed terribly
  - Realised that digit extraction is really bad, rewrote it
+ - Wrote a [solarized-dark theme usercss](https://github.com/YoogottamK/jupyter-notebook-solarized-dark) for jupyter notebook and jupyterlab
 
 #### winter'19
  - Tried digit recognition again, using a CNN, accuracy: 9%
