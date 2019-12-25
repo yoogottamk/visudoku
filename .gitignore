@@ -1,2 +1,7 @@
 .ipynb_checkpoints
 venv
+
+data/*.png
+digit-recog/aug*
+*.pickle
+*.model

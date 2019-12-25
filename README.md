@@ -27,6 +27,8 @@ The final puzzle is solved by a cpp program (here as a submodule) which I wrote 
 
 ## Instructions
 
+#### Please first follow the instructions given in [digit-recog](./digit-recog)
+
 Run jupyterlab or jupyter notebook and run `visudoku.ipynb`.
 
 You can either use the images given in `test-images`, or provide your own images, or even use the webcam.
