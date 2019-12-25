@@ -6,13 +6,12 @@ import numpy as np
 import cv2 as cv
 from tqdm import tqdm
 
-data_dir = 'train'
 CATEGORIES = list(range(10))
 IMG_SIZE = 30
 
 train_data = []
 
-def create_train_data():
+def create_train_data(data_dir):
     for c in CATEGORIES:
         path = os.path.join(data_dir, str(c))
 
@@ -23,7 +22,19 @@ def create_train_data():
             except Exception as e:
                 pass
 
-create_train_data()
+augment_dirs = []
+
+for scale in range(1, 5):
+    augment_dirs.append(f"aug_{scale}/train")
+    augment_dirs.append(f"aug_{-scale}/train")
+
+    augment_dirs.append(f"aug_rot{scale * 4}/train")
+    augment_dirs.append(f"aug_rot{-scale * 4}/train")
+
+create_train_data('train')
+
+for aug_dir in augment_dirs:
+    create_train_data(aug_dir)
 
 random.shuffle(train_data)
 
