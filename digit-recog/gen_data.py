@@ -24,6 +24,10 @@ def create_train_data(data_dir):
 
 augment_dirs = []
 
+"""
+Use this only if you have generated
+  the default augmented directories
+"""
 for scale in range(1, 5):
     augment_dirs.append(f"aug_{scale}/train")
     augment_dirs.append(f"aug_{-scale}/train")

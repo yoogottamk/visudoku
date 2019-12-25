@@ -38,6 +38,9 @@ def augemnt_by_scaling(imgs, border_size):
         cv.imwrite(new_img_path, new_img)
 
 def augemnt_by_rotation(imgs, angle):
+    """
+    Augments image data by rotating it a little
+    """
     for img_path in imgs:
         img = cv.imread(img_path)
 
@@ -52,6 +55,13 @@ def augemnt_by_rotation(imgs, angle):
             os.makedirs(new_img_dir, exist_ok=True)
         cv.imwrite(new_img_path, new_img)
 
+"""
+Default augmentation:
+ - added black border of {1..4}px around the image to simulate smaller digits
+ - removed black border of {1..4}px from the image to simulate larger digits
+ - rotated {4, 8, 12, 16} degrees clockwise and anticlockwise to simulate weird orientations
+
+"""
 imgs = []
 for dig in range(10):
     dirname = f"train/{dig}/"
