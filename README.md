@@ -13,6 +13,13 @@ Digit recognition is done using K-Nearest Neighbours (knn).
 
 The final puzzle is solved by a cpp program (here as a submodule) which I wrote a few years ago.
 
+## UPDATE!
+Now I have 1332 images, and a better model. The augmentation was limited to {1..2}px scaling and {4, 8} degrees rotation.
+
+It performs wayy better now!
+
+Now, I retained the jupyter notebook output in [visudoku.ipynb](./visudoku.ipynb)
+
 ## Screenshots
 <img src="./screens/Original.png" alt="Original" height="500px" />
 <img src="./screens/Preprocessed.png" alt="After Preprocessing" height="500px" />
