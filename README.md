@@ -14,16 +14,16 @@ Digit recognition is done using K-Nearest Neighbours (knn).
 The final puzzle is solved by a cpp program (here as a submodule) which I wrote a few years ago.
 
 ## Screenshots
-![Original](./screens/Original.png)
-![After Preprocessing](./screens/Preprocessed.png)
-![Getting boundary of the puzzle](./screens/GettingTheBoundary.png)
-![Extracting the puzzle](./screens/ExtractingThePuzzle.png)
-![Getting the digits](./screens/GettingTheDigits.png)
-![Digit recognition](./screens/DigitRecognition.png)
+<img src="./screens/Original.png" alt="Original" height="500px" />
+<img src="./screens/Preprocessed.png" alt="After Preprocessing" height="500px" />
+<img src="./screens/GettingTheBoundary.png" alt="Getting boundary of the puzzle" height="500px" />
+<img src="./screens/ExtractingThePuzzle.png" alt="Extracting the puzzle" height="500px" />
+<img src="./screens/GettingTheDigits.png" alt="Getting the digits" height="500px" />
+<img src="./screens/DigitRecognition.png" alt="Digit recognition" height="500px" />
 
 ### An example
 
-![Another example](./screens/Final.png)
+<img src="./screens/Final.png" alt="Another example" height="500px" />
 
 ## Instructions
 
@@ -46,7 +46,7 @@ This project began a year ago, I could only work on it in my vacations.
  - Finished the opencv part (everything till digit extraction)
  - Got stuck at digit recognition.
 
-#### summer'18
+#### summer'19
  - Took [a course on ml](https://www.coursera.org/learn/machine-learning)
  - Tried to make it recognize the digits, failed terribly
  - Realised that digit extraction is really bad, rewrote it
@@ -57,4 +57,4 @@ This project began a year ago, I could only work on it in my vacations.
  - Tried digit recognition using knn, accuracy: 99.69%
  - Put up all the pieces together
 
-##### TODO: organize this in a better manner
+##### TODO: organize this in a better manner, create a better frontend, and tidy up the code
