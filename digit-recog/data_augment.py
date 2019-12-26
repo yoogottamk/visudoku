@@ -3,7 +3,7 @@ import os
 import cv2 as cv
 import numpy as np
 
-def augemnt_by_scaling(imgs, border_size):
+def augment_by_scaling(imgs, border_size):
     """
     Augments image data by scaling it a little [adds/subtracts border]
     Assumes image is grayscale and the caller is
@@ -37,7 +37,7 @@ def augemnt_by_scaling(imgs, border_size):
             os.makedirs(new_img_dir, exist_ok=True)
         cv.imwrite(new_img_path, new_img)
 
-def augemnt_by_rotation(imgs, angle):
+def augment_by_rotation(imgs, angle):
     """
     Augments image data by rotating it a little
     """
@@ -68,9 +68,9 @@ for dig in range(10):
     for f in os.listdir(f"{dirname}"):
         imgs.append(dirname + f)
 
-for i in range(1, 5):
-    augemnt_by_scaling(imgs, i)
-    augemnt_by_scaling(imgs, -i)
+for i in range(1, 3):
+    augment_by_scaling(imgs, i)
+    augment_by_scaling(imgs, -i)
 
-    augemnt_by_rotation(imgs, i*4)
-    augemnt_by_rotation(imgs, -i*4)
+    augment_by_rotation(imgs, i*4)
+    augment_by_rotation(imgs, -i*4)
