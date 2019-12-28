@@ -18,15 +18,13 @@ Now I have 1332 images, and a better model. The augmentation was limited to {1..
 
 It performs wayy better now!
 
-Now, I retained the jupyter notebook output in [visudoku.ipynb](./visudoku.ipynb)
-
 ## Screenshots
-<img src="./screens/Original.png" alt="Original" height="500px" />
-<img src="./screens/Preprocessed.png" alt="After Preprocessing" height="500px" />
-<img src="./screens/GettingTheBoundary.png" alt="Getting boundary of the puzzle" height="500px" />
-<img src="./screens/ExtractingThePuzzle.png" alt="Extracting the puzzle" height="500px" />
-<img src="./screens/GettingTheDigits.png" alt="Getting the digits" height="500px" />
-<img src="./screens/DigitRecognition.png" alt="Digit recognition" height="500px" />
+<img src="./screens/Original.png" alt="Original" style="max-height:500px" />
+<img src="./screens/Preprocessed.png" alt="After Preprocessing" style="max-height:500px" />
+<img src="./screens/GettingTheBoundary.png" alt="Getting boundary of the puzzle" style="max-height:500px" />
+<img src="./screens/ExtractingThePuzzle.png" alt="Extracting the puzzle" style="max-height:500px" />
+<img src="./screens/GettingTheDigits.png" alt="Getting the digits" style="max-height:500px" />
+<img src="./screens/DigitRecognition.png" alt="Digit recognition" style="max-height:500px" />
 
 ### An example
 
@@ -34,12 +32,21 @@ Now, I retained the jupyter notebook output in [visudoku.ipynb](./visudoku.ipynb
 
 ## Instructions
 
+Before anything else, please [create](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment) a python3 virtual environment and install the stuff in [requirements.txt](./requirements.txt)
+
+```sh
+python3 -m venv venv
+. venv/bin/activate
+
+pip install -r requirements.txt
+```
+
 #### Please first follow the instructions given in [digit-recog](./digit-recog)
 
-Run jupyterlab or jupyter notebook and run `visudoku.ipynb`.
+Run `jupyter lab` and open `visudoku.ipynb`.
 
 You can either use the images given in `test-images`, or provide your own images, or even use the webcam.
-To use the webcam, you can leave the `IMG_PATH` empty.
+To use the webcam, you have to provide an invalid image pat.
 
 If you use the webcam, you have to press `c` when you want to capture the image.
 

@@ -4,3 +4,4 @@ venv
 data/*.png
 digit-recog/aug*
 *.pickle
+*.model
