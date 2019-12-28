@@ -19,20 +19,20 @@ Now I have 1332 images, and a better model. The augmentation was limited to {1..
 It performs wayy better now!
 
 ## Screenshots
-<img src="./screens/Original.png" alt="Original" style="max-height:500px" />
-<img src="./screens/Preprocessed.png" alt="After Preprocessing" style="max-height:500px" />
-<img src="./screens/GettingTheBoundary.png" alt="Getting boundary of the puzzle" style="max-height:500px" />
-<img src="./screens/ExtractingThePuzzle.png" alt="Extracting the puzzle" style="max-height:500px" />
-<img src="./screens/GettingTheDigits.png" alt="Getting the digits" style="max-height:500px" />
-<img src="./screens/DigitRecognition.png" alt="Digit recognition" style="max-height:500px" />
+<img src="./screens/Original.png" alt="Original" height="400px" />
+<img src="./screens/Preprocessed.png" alt="After Preprocessing" height="400px" />
+<img src="./screens/GettingTheBoundary.png" alt="Getting boundary of the puzzle" height="400px" />
+<img src="./screens/ExtractingThePuzzle.png" alt="Extracting the puzzle" height="400px" />
+<img src="./screens/GettingTheDigits.png" alt="Getting the digits" height="400px" />
+<img src="./screens/DigitRecognition.png" alt="Digit recognition" height="400px" />
 
 ### An example
 
-<img src="./screens/Final.png" alt="Another example" height="500px" />
+<img src="./screens/Final.png" alt="Another example" height="400px" />
 
 ## Instructions
 
-Before anything else, please [create](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment) a python3 virtual environment and install the stuff in [requirements.txt](./requirements.txt)
+Before anything else, please [create a python3 virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment) and install the stuff in [requirements.txt](./requirements.txt)
 
 ```sh
 python3 -m venv venv
