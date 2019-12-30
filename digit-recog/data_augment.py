@@ -3,6 +3,12 @@ import os
 import cv2 as cv
 import numpy as np
 
+CWD = os.path.dirname(os.path.realpath(__file__))
+
+def make_dir(dirname):
+    if not os.path.exists(dirname):
+        os.makedirs(dirname, exist_ok=True)
+
 def augment_by_scaling(imgs, border_size):
     """
     Augments image data by scaling it a little [adds/subtracts border]
@@ -31,10 +37,10 @@ def augment_by_scaling(imgs, border_size):
 
         new_img = cv.resize(new_img, (30, 30))
 
-        new_img_path = f"./aug_{border_size}/{img_path}"
+        new_img_path = f"{CWD}/aug_{border_size}/{img_path}"
         new_img_dir = os.path.dirname(new_img_path)
-        if not os.path.exists(new_img_dir):
-            os.makedirs(new_img_dir, exist_ok=True)
+        make_dir(new_img_dir)
+
         cv.imwrite(new_img_path, new_img)
 
 def augment_by_rotation(imgs, angle):
@@ -49,10 +55,10 @@ def augment_by_rotation(imgs, angle):
         M = cv.getRotationMatrix2D((h/2, w/2), angle, 1)
         new_img = cv.warpAffine(img, M, (w, h))
 
-        new_img_path = f"./aug_rot{angle}/{img_path}"
+        new_img_path = f"{CWD}/aug_rot{angle}/{img_path}"
         new_img_dir = os.path.dirname(new_img_path)
-        if not os.path.exists(new_img_path):
-            os.makedirs(new_img_dir, exist_ok=True)
+        make_dir(new_img_dir)
+
         cv.imwrite(new_img_path, new_img)
 
 """
@@ -64,7 +70,7 @@ Default augmentation:
 """
 imgs = []
 for dig in range(10):
-    dirname = f"train/{dig}/"
+    dirname = f"{CWD}/train/{dig}/"
     for f in os.listdir(f"{dirname}"):
         imgs.append(dirname + f)
 

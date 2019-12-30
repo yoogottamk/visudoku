@@ -8,6 +8,7 @@ from tqdm import tqdm
 
 CATEGORIES = list(range(10))
 IMG_SIZE = 30
+CWD = os.path.dirname(os.path.realpath(__file__))
 
 train_data = []
 
@@ -29,13 +30,13 @@ Use this only if you have generated
   the default augmented directories
 """
 for scale in range(1, 3):
-    augment_dirs.append(f"aug_{scale}/train")
-    augment_dirs.append(f"aug_{-scale}/train")
+    augment_dirs.append(f"{CWD}/aug_{scale}/train")
+    augment_dirs.append(f"{CWD}/aug_{-scale}/train")
 
-    augment_dirs.append(f"aug_rot{scale * 4}/train")
-    augment_dirs.append(f"aug_rot{-scale * 4}/train")
+    augment_dirs.append(f"{CWD}/aug_rot{scale * 4}/train")
+    augment_dirs.append(f"{CWD}/aug_rot{-scale * 4}/train")
 
-create_train_data('train')
+create_train_data(f"{CWD}/train")
 
 for aug_dir in augment_dirs:
     create_train_data(aug_dir)
@@ -52,10 +53,10 @@ for features, label in train_data:
 X = np.array(X)
 X = np.reshape(X, (-1, IMG_SIZE, IMG_SIZE, 1))
 
-pickle_out = open("X.pickle", "wb")
+pickle_out = open(f"{CWD}/X.pickle", "wb")
 pickle.dump(X, pickle_out)
 pickle_out.close()
 
-pickle_out = open("y.pickle", "wb")
+pickle_out = open(f"{CWD}/y.pickle", "wb")
 pickle.dump(y, pickle_out)
 pickle_out.close()
