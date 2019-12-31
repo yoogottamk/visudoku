@@ -35,10 +35,20 @@ It performs wayy better now!
 ### Docker
 Make sure you have [docker](https://www.docker.com/) installed!
 
+You can either build the image yourself (takes a lot of time) or use the online one
+
+#### Build locally
+
 To get started, run
 ```sh
 ./setup.sh
 docker run -p <port>:8080 -d --name visudoku visudoku 
+```
+
+#### Download built image
+Simply run
+```sh
+docker run -p 8080:8080 --name visudoku -d yoogottamk/visudoku
 ```
 
 You can check the app at the port you specified
