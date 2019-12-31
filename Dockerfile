@@ -17,8 +17,6 @@ RUN python3 digit-recog/data_augment.py && \
     python3 digit-recog/gen_data.py && \
     python3 digit-recog/train.py
 
-RUN ./flask-setup.sh
-
 WORKDIR /app/flask-app
 
 ENTRYPOINT [ "python3" ]

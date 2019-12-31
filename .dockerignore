@@ -7,5 +7,3 @@ digit-recog/*.pickle
 digit-recog/*.model
 
 __pycache__
-
-flask-app/visudoku.py
