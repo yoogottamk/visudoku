@@ -2,12 +2,12 @@ FROM python:3.7-slim
 
 MAINTAINER yoogottamk "yoogottamk@outlook.com"
 
+RUN apt-get update && \
+	apt-get -y install libglib2.0 libsm6 libxext6 libxrender1 --no-install-recommends
+
 COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
-
-RUN apt-get update && \
-	apt-get -y install libglib2.0 libsm6 libxext6 libxrender1 --no-install-recommends
 
 RUN pip3 install -r requirements.txt
 
