@@ -3,8 +3,8 @@ venv
 
 data/*.png
 digit-recog/aug*
-*.pickle
-*.model
+digit-recog/*.pickle
+digit-recog/*.model
 
 __pycache__
 
