@@ -1,4 +1,4 @@
-FROM 3.6-slim-buster
+FROM python:3.7-slim
 
 MAINTAINER yoogottamk "yoogottamk@outlook.com"
 
@@ -6,13 +6,16 @@ COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN apt-get update && \
+	apt-get -y install libglib2.0 libsm6 libxext6 libxrender1 make --no-install-recommends
+
+RUN pip3 install -r requirements.txt
 
 COPY . /app
 
-RUN python digit-recog/data-augment.py && \
-    python digit-recog/gen_data.py && \
-    python digit-recog/train.py
+RUN python3 digit-recog/data_augment.py && \
+    python3 digit-recog/gen_data.py && \
+    python3 digit-recog/train.py
 
 RUN make && \
     cd sudoku-solver && \
@@ -20,5 +23,5 @@ RUN make && \
 
 WORKDIR /app/flask-app
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python3" ]
 CMD [ "server.py" ]
