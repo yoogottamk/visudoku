@@ -5,3 +5,5 @@ data/*.png
 digit-recog/aug*
 *.pickle
 *.model
+
+__pycache__

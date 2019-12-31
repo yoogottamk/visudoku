@@ -1,0 +1,50 @@
+body {
+    background: black;
+    color: #eee;
+}
+
+.fp-next {
+    border-color: transparent transparent transparent #bbb !important;
+}
+
+.fp-prev {
+    border-color: transparent #bbb transparent transparent !important;
+}
+
+.center {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#sudoku td {
+    width: 2rem !important;
+    height: 2rem !important;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+#sudoku td:first-child {
+  border-left: 3px solid #777;
+}
+#sudoku td:nth-child(3n) {
+  border-right: 3px solid #777;
+}
+#sudoku tr:first-child {
+  border-top: 3px solid #777;
+}
+#sudoku tr:nth-child(3n) td {
+  border-bottom: 3px solid #777;
+}
+
+#sudoku input {
+    box-sizing: border-box;
+    width: 2rem !important;
+    padding: 0 !important;
+    text-align: center;
+    background-color: black !important;
+    color: #eee !important;
+
+    border: none !important;
+    outline: none !important;
+}

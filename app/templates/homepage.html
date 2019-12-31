@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="fullpage">
+  <div class="section">
+    <h1>Welcome to ViSudoku</h1>
+    Scroll down to get started!
+  </div>
+  <div class="section">
+    <form action="/solve" method="POST" enctype="multipart/form-data">
+      <label for="image"><h3>Choose an image (which contanis a sudoku puzzle):</h3></label><br>
+      <input type="file" id="image" name="image" accept="image/png, image/jpeg" required><br><br><br>
+      <button class="btn btn-primary" type="submit">Done</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

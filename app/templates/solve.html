@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="fullpage">
+    <div class="section">
+      {% if success %}
+      <div class="d-flex justify-content-around">
+        <div>
+          <h1>Success!</h1>
+          Here's the solution!
+          <br><br>
+          Scroll down to see the individual steps
+        </div>
+        <table id="sudoku"></table>
+      </div>
+      {% else %}
+        <h1>Oops! Something went wrong :/</h1>
+        It was most probably an error in digit recognition (I'm still learning!)
+        <br><br>
+        Please scroll down and correct the numbers!
+      {% endif %}
+    </div>
+    {% if success %}
+      <div class="section">
+        {% for stage in all_stages %}
+        <div class="slide">
+          <div class="center">
+            <h1>{{ stage[0] }}</h1>
+            <img src="data:image/jpeg;charset=utf-8;base64, {{ stage[1] }}" alt="Stage{{ loop.index }}" style="max-height: 60vh; width: auto; margin: auto">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="section">
+        <div class="d-flex justify-content-around">
+          <img src="data:image/jpeg;charset=utf-8;base64, {{ all_stages[-2][1] }}" alt="Puzzle" style="max-height: 60vh; width: auto">
+          <div>
+            <table id="sudoku"></table>
+            <br><br>
+            <form method="POST" action="/fix" id="submit">
+              <button type="submit" class="w-100 btn btn-primary">Done</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      const solution = "{{ solution }}",
+        digits = solution.split(''),
+        nums = "{{ nums }}".split(' ');
+
+      let tableHtml = "<tr>";
+
+      if("{{ success }}" === "True") {
+        for(let i = 0; i < digits.length; i++) {
+          if(i && i % 9 == 0) tableHtml += "</tr><tr>";
+          tableHtml += "<td>" + digits[i] + "</td>";
+        }
+      } else {
+        for(let i = 0; i < nums.length; i++) {
+          if(i && i % 9 == 0) tableHtml += "</tr><tr>";
+          tableHtml += "<td> <input type='text' class='form-control' value=" + nums[i] + "></td>";
+        }
+      }
+
+      tableHtml += "</tr>"
+      document.getElementById("sudoku").innerHTML = tableHtml;
+
+      const all_stages = "{{ all_stages }}".replace(/&#39;/g, "'");
+
+      $("#submit").on('submit', function(e) {
+        let nums = [];
+
+        $("#sudoku").find("tr").each(function() {
+          $(this).find("td").each(function() {
+            $(this).find("input").each(function() {
+              nums.push($(this).val());
+            });
+          });
+        });
+
+        $("#submit").append($("<input>").attr("type", "hidden").attr("name", "all_stages").val(all_stages));
+        $("#submit").append($("<input>").attr("type", "hidden").attr("name", "inp").val(nums.join(" ")));
+      });
+    });
+  </script>
+{% endblock %}
