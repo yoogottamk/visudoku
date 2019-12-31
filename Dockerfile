@@ -7,7 +7,7 @@ COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 
 RUN apt-get update && \
-	apt-get -y install libglib2.0 libsm6 libxext6 libxrender1 make --no-install-recommends
+	apt-get -y install libglib2.0 libsm6 libxext6 libxrender1 --no-install-recommends
 
 RUN pip3 install -r requirements.txt
 
