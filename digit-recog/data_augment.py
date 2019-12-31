@@ -37,6 +37,8 @@ def augment_by_scaling(imgs, border_size):
 
         new_img = cv.resize(new_img, (30, 30))
 
+        img_path = "/".join(img_path.split("/")[-2:])
+
         new_img_path = f"{CWD}/aug_{border_size}/{img_path}"
         new_img_dir = os.path.dirname(new_img_path)
         make_dir(new_img_dir)
@@ -54,6 +56,8 @@ def augment_by_rotation(imgs, angle):
 
         M = cv.getRotationMatrix2D((h/2, w/2), angle, 1)
         new_img = cv.warpAffine(img, M, (w, h))
+
+        img_path = "/".join(img_path.split("/")[-2:])
 
         new_img_path = f"{CWD}/aug_rot{angle}/{img_path}"
         new_img_dir = os.path.dirname(new_img_path)
