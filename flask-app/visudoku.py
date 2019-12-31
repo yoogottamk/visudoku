@@ -258,8 +258,8 @@ def solve_visudoku(img_path=None, debug=False):
     img_stages.append({ "label": "Input", "img": img.copy() })
     
     if debug:
-        plt.imshow(img)
-        plt.show()
+        pass
+        pass
 
     copy = img
 
@@ -268,8 +268,8 @@ def solve_visudoku(img_path=None, debug=False):
     img_stages.append({ "label": "Post Preprocessing", "img": img.copy() })
     
     if debug:
-        plt.imshow(img, cmap='gray')
-        plt.show()
+        pass
+        pass
 
     corners = get_corners(img)
     marked = mark_boundary(copy, corners)
@@ -277,24 +277,24 @@ def solve_visudoku(img_path=None, debug=False):
     img_stages.append({ "label": "Boundaries marked", "img": marked.copy() })
 
     if debug:
-        plt.imshow(marked)
-        plt.show()
+        pass
+        pass
     
     puzzle = extract_rect(img, corners)
     
     img_stages.append({ "label": "Extracted puzzle", "img": puzzle.copy() })
     
     if debug:
-        plt.imshow(puzzle)
-        plt.show()
+        pass
+        pass
     
     digits, boxed_digits = get_digits(puzzle)
     
     img_stages.append({ "label": "Boxed digits", "img": boxed_digits.copy() })
     
     if debug:
-        plt.imshow(boxed_digits)
-        plt.show()
+        pass
+        pass
     
     model = get_model()
     nums = []
@@ -304,8 +304,8 @@ def solve_visudoku(img_path=None, debug=False):
         
         if debug:
             print(num)
-            plt.imshow(dig['img'], cmap='gray')
-            plt.show()
+            pass
+            pass
         
         nums.append(classify_img(model, dig['img']))
         
@@ -319,8 +319,8 @@ if is_running():
         img_path = f"{TEST_IMG_DIR}/test{i}.jpg"
         
         img = cv.imread(img_path)
-        plt.imshow(img)
-        plt.show()
+        pass
+        pass
         
         solution, success, img_stages, nums = solve_visudoku(img_path)
         
