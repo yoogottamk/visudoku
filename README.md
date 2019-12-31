@@ -48,7 +48,7 @@ docker run -p <port>:8080 -d --name visudoku visudoku
 #### Download built image
 Simply run
 ```sh
-docker run -p 8080:8080 --name visudoku -d yoogottamk/visudoku
+docker run -p <port>:8080 -d --name visudoku yoogottamk/visudoku
 ```
 
 You can check the app at the port you specified
