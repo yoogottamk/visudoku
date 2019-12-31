@@ -1,0 +1,7 @@
+#!/bin/bash
+# clear jupyter notebook output
+
+for f in src/*.ipynb; do
+    jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace "$f"
+    git add "$f"
+done
