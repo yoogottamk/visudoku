@@ -32,6 +32,24 @@ It performs wayy better now!
 
 ## Instructions
 
+### Docker
+Make sure you have [docker](https://www.docker.com/) installed!
+
+To get started, run
+```sh
+./setup.sh
+docker run -p <port>:8080 -d --name visudoku visudoku 
+```
+
+You can check the app at the port you specified
+
+To stop/start the container, run
+```sh
+docker stop/start visudoku
+```
+
+### Normal
+
 Before anything else, please [create a python3 virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment) and install the stuff in [requirements.txt](./requirements.txt)
 
 ```sh
@@ -43,7 +61,21 @@ pip install -r requirements.txt
 
 #### Please first follow the instructions given in [digit-recog](./digit-recog)
 
-Run `jupyter lab` and open `visudoku.ipynb`.
+
+### Flask
+```sh
+./flask-setup.sh
+cd flask-app
+python server.py
+```
+
+You can check the app at [port 8080](http://localhost:8080)
+
+### Jupyter
+
+*NOTE: You first need to install jupyter notebook/lab first*
+
+Run `jupyter notebook` and open `visudoku.ipynb`.
 
 You can either use the images given in `test-images`, or provide your own images, or even use the webcam.
 To use the webcam, you have to provide an invalid image pat.
