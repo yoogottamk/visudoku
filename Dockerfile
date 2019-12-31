@@ -17,9 +17,7 @@ RUN python3 digit-recog/data_augment.py && \
     python3 digit-recog/gen_data.py && \
     python3 digit-recog/train.py
 
-RUN make && \
-    cd sudoku-solver && \
-    make
+RUN ./flask-setup.sh
 
 WORKDIR /app/flask-app
 

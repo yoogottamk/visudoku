@@ -2,12 +2,6 @@
 import cv2 as cv
 import numpy as np
 
-try:
-    import matplotlib.pyplot as plt
-    %matplotlib inline
-except:
-    pass
-
 from functools import reduce
 import subprocess
 import pickle
