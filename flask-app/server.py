@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+
 import base64 as b64
 import ast
 import os
@@ -63,4 +64,4 @@ def fix():
 
     return render_template("solve.html", solution=clean_sudoku_sol(solution), success=success, all_stages=all_stages, nums=inp)
 
-app.run(host="127.0.0.1", port=8080, debug=True)
+app.run(host="0.0.0.0", port=8080, debug=True)

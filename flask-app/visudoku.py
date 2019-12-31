@@ -1,9 +1,10 @@
+
 import cv2 as cv
 import numpy as np
 
 try:
     import matplotlib.pyplot as plt
-    get_ipython().run_line_magic('matplotlib', 'inline')
+    %matplotlib inline
 except:
     pass
 
@@ -329,4 +330,3 @@ if is_running():
         else:
             print("Oops, something went wrong!")
             print("It will soon be possible to correct this mistake!")
-
